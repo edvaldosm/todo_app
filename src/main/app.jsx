@@ -7,8 +7,8 @@ import Menu from "../template/menu";
 import Routes from "./routes";
 
 export default props => (
-  <di className="container">
+  <div className="container">
     <Menu />
     <Routes />
-  </di>
+  </div>
 );
