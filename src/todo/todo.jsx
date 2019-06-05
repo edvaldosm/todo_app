@@ -5,7 +5,6 @@ import PageHeader from "../template/pageHeader";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
 
-const URL = "http://localhost:3006/api/todos";
 export default class Todo extends Component {
   constructor(props) {
     super(props);
