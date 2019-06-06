@@ -1,33 +1,33 @@
-import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import IconButton from "../template/iconButton";
-import { markAsDone, markAsPending, remove } from "./todoActions";
+import IconButton from '../template/iconButton';
+import { markAsDone, markAsPending, remove } from './todoActions';
 
 const TodoList = props => {
   const renderRows = () => {
     const list = props.list || [];
     return list.map(todo => (
       <tr key={todo._id}>
-        <td className={todo.done ? "markedAsDone" : ""}>{todo.description}</td>
+        <td className={todo.done ? 'markedAsDone' : ''}>{todo.description}</td>
         <td>
           <IconButton
-            style="success"
+            style='success'
             hide={todo.done}
-            icon="check"
+            icon='check'
             onClick={() => props.markAsDone(todo)}
           />
           <IconButton
-            style="warning"
+            style='warning'
             hide={!todo.done}
-            icon="undo"
+            icon='undo'
             onClick={() => props.markAsPending(todo)}
           />
           <IconButton
-            style="danger"
+            style='danger'
             hide={!todo.done}
-            icon="trash-o"
+            icon='trash-o'
             onClick={() => props.remove(todo)}
           />
         </td>
@@ -36,11 +36,11 @@ const TodoList = props => {
   };
 
   return (
-    <table className="table">
+    <table className='table'>
       <thead>
         <tr>
           <th>Descrição</th>
-          <th className="tableActions">Ações</th>
+          <th className='tableActions'>Ações</th>
         </tr>
       </thead>
       <tbody>{renderRows()}</tbody>
